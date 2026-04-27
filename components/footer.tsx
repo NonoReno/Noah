@@ -15,7 +15,7 @@ export function Footer() {
               Un été plus lent. Un maillot qui dure.
             </p>
             <p className="text-[0.6rem] tracking-widest2 uppercase mt-8 text-sand/50">
-              @mayina_swim · Paris
+              @THEMAYINA · Paris
             </p>
           </div>
           <FooterCol
@@ -24,7 +24,7 @@ export function Footer() {
               { label: "Femme", href: "/femme" },
               { label: "Homme", href: "/homme" },
               { label: "Best-sellers", href: "/bestsellers" },
-              { label: "Limited Edition", href: "/limited" },
+              { label: "Limited Edition", href: "/bestsellers" },
             ]}
           />
           <FooterCol
@@ -41,7 +41,7 @@ export function Footer() {
             items={[
               { label: "Contact", href: "/contact" },
               { label: "Livraison", href: "/livraison" },
-              { label: "Retours", href: "/livraison" },
+              { label: "Retours", href: "/retours" },
               { label: "Guide tailles", href: "/tailles" },
               { label: "FAQ", href: "/faq" },
             ]}
@@ -53,8 +53,8 @@ export function Footer() {
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href="/mentions-legales">Mentions légales</Link>
             <Link href="/cgv">CGV</Link>
-            <Link href="/confidentialite">Confidentialité</Link>
-            <Link href="/cookies">Cookies</Link>
+            <Link href="/politique-confidentialite">Confidentialité</Link>
+            <Link href="/politique-confidentialite">Cookies</Link>
           </div>
         </div>
       </div>

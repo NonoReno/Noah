@@ -20,11 +20,11 @@ export function SocialGrid() {
           <div>
             <p className="eyebrow text-stone mb-4">Communauté</p>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">
-              <em className="text-orange">@mayina_swim</em>
+              <em className="text-orange">@THEMAYINA</em>
             </h2>
           </div>
           <a
-            href="https://instagram.com/mayina_swim"
+            href="https://instagram.com/THEMAYINA"
             target="_blank"
             rel="noreferrer"
             className="slink"
@@ -37,7 +37,7 @@ export function SocialGrid() {
           {PHOTOS.map((src, i) => (
             <motion.a
               key={i}
-              href="https://instagram.com/mayina_swim"
+              href="https://instagram.com/THEMAYINA"
               target="_blank"
               rel="noreferrer"
               initial={{ opacity: 0, y: 16 }}

@@ -4,6 +4,9 @@ import { LenisProvider } from "@/components/lenis-provider";
 import { Cursor } from "@/components/cursor";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { CartSidebar } from "@/components/cart-sidebar";
+import { ToastProvider } from "@/components/toast-provider";
+import { CartInit } from "@/components/cart-init";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -22,38 +25,29 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "MAYINA — Swimwear essentiel, pensé pour durer",
+  title: { default: "MAYINA — Swimwear essentiel", template: "%s — MAYINA" },
   description:
     "Maillots de bain minimalistes en ECONYL™ recyclé. Collections capsule limitées. Un été plus lent. Un maillot qui dure.",
-  keywords: [
-    "maillot de bain",
-    "swimwear",
-    "slow fashion",
-    "ECONYL",
-    "minimaliste",
-    "français",
-    "durable",
-  ],
+  keywords: ["maillot de bain", "swimwear", "slow fashion", "ECONYL", "made in europe"],
   openGraph: {
     title: "MAYINA — Swimwear essentiel",
     description: "Un été plus lent. Un maillot qui dure.",
     type: "website",
     locale: "fr_FR",
   },
-  metadataBase: new URL("https://mayina.fr"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://mayina.fr"),
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="grain bg-sand text-ink-1">
+        <CartInit />
         <LenisProvider>
           <Cursor />
           <Header />
+          <CartSidebar />
+          <ToastProvider />
           <main>{children}</main>
           <Footer />
         </LenisProvider>

@@ -370,6 +370,24 @@ body {
   transform-origin: left center;
 }
 
+/* Beach scroll narrative: plage → côte → coucher de soleil */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 48;
+  background: linear-gradient(
+    180deg,
+    rgba(180, 215, 210, 0.0) 0%,
+    rgba(180, 215, 210, 0.035) 20%,
+    transparent 42%,
+    rgba(196, 115, 42, 0.035) 68%,
+    rgba(196, 115, 42, 0.08) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
