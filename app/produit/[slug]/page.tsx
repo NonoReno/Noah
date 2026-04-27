@@ -3,13 +3,14 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { use, useState } from "react";
 import { motion } from "framer-motion";
 import { PRODUCTS } from "@/lib/products";
 import { ProductCard } from "@/components/product-card";
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = PRODUCTS.find((p) => p.id === params.slug);
+export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
+  const product = PRODUCTS.find((p) => p.id === slug);
   if (!product) notFound();
 
   const related = PRODUCTS.filter(
